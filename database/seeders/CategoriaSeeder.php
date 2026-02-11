@@ -1,0 +1,45 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use App\Models\Categoria;
+
+class CategoriaSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        //
+        /*Categoria::create([
+            'nombre' => 'Zapatilla'
+        ]);
+        Categoria::create([
+        'nombre' => 'Remera'
+        ]);*/
+            
+        Categoria::create([
+            'nombre' => 'Fiesta de Cumpleaños'
+        ]);
+
+        Categoria::create([
+            'nombre' => 'Boda o Casamiento'
+        ]);
+
+        Categoria::create([
+            'nombre' => 'Infantil'
+        ]);
+
+        Categoria::create([
+            'nombre' => 'Fiesta de Virgen'
+        ]);
+
+        Categoria::create([
+            'nombre' => 'Otro'
+        ]);
+
+    }
+}

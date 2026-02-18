@@ -5,7 +5,7 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.1",
         "ext-gd": "*",
         "barryvdh/laravel-dompdf": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
@@ -16,7 +16,8 @@
         "laravel/ui": "^4.2",
         "livewire/livewire": "^3.5",
         "maatwebsite/excel": "^3.1",
-        "spatie/laravel-permission": "^5.11"
+        "spatie/laravel-permission": "^5.11",
+        "ext-zip": "*", "ext-mbstring": "*", "ext-bcmath": "*", "ext-ctype": "*", "ext-json": "*", "ext-fileinfo": "*", "ext-openssl": "*", "ext-dom": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

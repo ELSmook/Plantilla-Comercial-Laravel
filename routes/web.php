@@ -33,5 +33,5 @@ Route::post('/actualizar/{evento}', [App\Http\Controllers\EventosController::cla
 
 Route::get('/', [FotosController::class, 'index']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'WelcomeIndex'])->name('welcome');

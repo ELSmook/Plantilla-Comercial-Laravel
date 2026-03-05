@@ -25,6 +25,6 @@ Route::resource("/fotos", FotosController::class)->names("fotos");
 // subirfotos y eliminarFoto
 //Route::put('/fotos/{foto}', [FotosController::class , 'store'])->name('fotos.store');
 //Route::get('/departamentos', [DepartamentosController::class, 'indexSecundario'])->name('departamento.alt-index');
-Route::delete("/fotos/foto/{foto}", [FotosController::class, "destroy"])->name("fotos.destroy");
+Route::delete("/fotos/foto/{foto}", [FotosController::class, "forcedestroy"])->name("fotos.forcedestroy");
 
 ?>

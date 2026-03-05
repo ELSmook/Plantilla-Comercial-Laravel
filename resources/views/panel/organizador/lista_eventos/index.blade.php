@@ -120,7 +120,7 @@
                                     <div class="dropdown-menu">
             
                                     <p>
-                                    <form action="{{ route('fotos.destroy', $foto) }}" method="POST">
+                                    <form action="{{ route('fotos.forcedestroy', $foto) }}" method="POST">
                                         @csrf 
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger text-uppercase">

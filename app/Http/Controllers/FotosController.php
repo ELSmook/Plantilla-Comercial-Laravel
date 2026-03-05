@@ -59,7 +59,7 @@ class FotosController extends Controller
 
     }
 
-    public function destroy(Fotos $foto){
+    public function forcedestroy(Fotos $foto){
         
         //$imagen_url= $foto->imagen;
         

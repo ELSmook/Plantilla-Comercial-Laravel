@@ -17,7 +17,7 @@
 {{-- Contenido de la Pagina --}}
 @section('content')
 {{-- Código --}}
-
+@can('lista_reservas')
 
 <div class="container-fluid">
     <div class="row">
@@ -148,6 +148,7 @@
         </div>
     </div>
 </div>
+@endcan
 @stop
 
 {{-- Importacion de Archivos CSS --}}

@@ -30,7 +30,11 @@ class UserSeeder2 extends Seeder
                 'password' => Hash::make('12345'),
               ])->assignRole('cliente');
                 
-                
+            User::create([
+                'name' => 'SalonArenales',
+                'email' => 'MarcelaCejas@gmail.com',
+                'password' => Hash::make('Salon24+42'),
+            ])->assignRole('organizador');
                 
 
         //

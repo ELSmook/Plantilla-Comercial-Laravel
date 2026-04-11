@@ -27,4 +27,21 @@ Route::resource("/fotos", FotosController::class)->names("fotos");
 //Route::get('/departamentos', [DepartamentosController::class, 'indexSecundario'])->name('departamento.alt-index');
 Route::delete("/fotos/foto/{foto}", [FotosController::class, "forcedestroy"])->name("fotos.forcedestroy");
 
+// Calendario Showindex
+
+Route::get('/eventos', [App\Http\Controllers\EventosController::class, 'Showindex'])->name('evento.index');
+
+Route::get('/eventos/Evento', [App\Http\Controllers\EventosController::class, 'index'])->name('home');
+// iba con get
+Route::post('/eventos/mostrar', [App\Http\Controllers\EventosController::class, 'show'])->name('show');
+
+Route::post('/eventos/agregar', [App\Http\Controllers\EventosController::class, 'store'])->name('store');
+
+Route::post('/eventos/editar/{id}', [App\Http\Controllers\EventosController::class, 'edit'])->name('edit');
+
+Route::post('/eventos/borrar/{id}', [App\Http\Controllers\EventosController::class, 'destroy'])->name('destroy');
+
+Route::post('/eventos/actualizar/{evento}', [App\Http\Controllers\EventosController::class, 'update'])->name('update');
+
+
 ?>

@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/Evento', [App\Http\Controllers\EventosController::class, 'index'])->name('home');
+/*Route::get('/Evento', [App\Http\Controllers\EventosController::class, 'index'])->name('home');
 // iba con get
 Route::post('/mostrar', [App\Http\Controllers\EventosController::class, 'show'])->name('show');
 
@@ -29,9 +29,9 @@ Route::post('/editar/{id}', [App\Http\Controllers\EventosController::class, 'edi
 
 Route::post('/borrar/{id}', [App\Http\Controllers\EventosController::class, 'destroy'])->name('destroy');
 
-Route::post('/actualizar/{evento}', [App\Http\Controllers\EventosController::class, 'update'])->name('update');
+Route::post('/actualizar/{evento}', [App\Http\Controllers\EventosController::class, 'update'])->name('update');*/
 
-Route::get('/', [FotosController::class, 'index']);
+//Route::get('/fotos', [FotosController::class, 'index']);
 
+Route::get('/', [App\Http\Controllers\FotosController::class, 'WelcomeIndex'])->name('welcome');
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'WelcomeIndex'])->name('welcome');

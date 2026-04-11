@@ -1,6 +1,6 @@
-@extends('adminlte::page')
+{{--@extends('adminlte::page')
 
-@section('content')
+@section('content')--}}
 
 
 
@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Mamba Bootstrap Template - Index</title>
+  <title>Salón Arenales 42</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -45,23 +45,33 @@
   <section id="topbar" class="d-none d-lg-block">
     <div class="container clearfix">
       <div class="contact-info float-left">
-        <i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="icofont-phone"></i> +1 5589 55488 55
+        {{--<i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
+        <i class="icofont-phone"></i> +1 5589 55488 55--}}
+        <i class="bx bx-user"></i>
+          @auth
+            {{--opciones de usuario logueado--}}
+              <a class="btn" href="{{ url('panel')}}">Panel</a>
+            @else
+            {{-- usuario no logueado--}}
+            <a class="btn" href="{{ url('login')}}">Iniciar Sesión</a>
+            @endauth
+        </a>
       </div>
       <div class="social-links float-right">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
         <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
         <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        {{--<a href="#" class="twitter"><i class="icofont-twitter"></i></a>
         <a href="#" class="skype"><i class="icofont-skype"></i></a>
-        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>--}}
       </div>
     </div>
   </section>
 
   <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container">
-
+  <header id="header" >
+    
+    <div class="container-lg">
+      
       <div class="logo float-left">
         <h1 class="text-light"><a href="index.html"><span>Salon Arenales</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
@@ -70,33 +80,20 @@
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#header">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li class="active"><a href="#header">Inicio</a></li>
+          <li><a href="#about">Sobre nosotros</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#portfolio">Portafolio</a></li>
+          <li><a href="#pricing">Precios</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
     </div>
+
+    
+    
   </header><!-- End Header -->
 
 
@@ -168,13 +165,13 @@
         <div class="row no-gutters">
           <div class="col-lg-6 video-box">
             <img src="assets/img/about.jpg" class="img-fluid" alt="">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            <a href="https://www.youtube.com/watch?v=EcbgbKtOELY" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
           </div>
 
           <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
             <div class="section-title">
-              <h2>About Us</h2>
+              <h2>Sobre Nosotros</h2>
               <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
             </div>
 
@@ -203,7 +200,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="section-title">
-          <h2>Our Portfolio</h2>
+          <h2>Portafolio</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
@@ -372,22 +369,22 @@
             <h4 class="title"><a href="">Dolor Sitema</a></h4>
             <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="icofont-earth"></i></div>
             <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
             <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="icofont-image"></i></div>
             <h4 class="title"><a href="">Magni Dolores</a></h4>
             <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="icofont-settings"></i></div>
             <h4 class="title"><a href="">Nemo Enim</a></h4>
             <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="icofont-tasks-alt"></i></div>
             <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
             <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
@@ -401,7 +398,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Frequently Asked Questions</h2>
+          <h2>Preguntas Frecuentes</h2>
         </div>
         <div class="row  d-flex align-items-stretch">
 
@@ -450,134 +447,23 @@
         </div>
 
       </div>
-          <!-- Calendario -->
       <!-- Button trigger modal 
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#evento">
-        Launch
-      </button>-->
-
-
-
-      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-
-          <button class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-          <i class="fas fa-calendar-day"></i>  Fechas de Eventos
-          </button>
-
-        </li>
-        <li class="nav-item" role="presentation">
-
-          <button class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-          <i class="fa fa-info-circle" aria-hidden="true"></i> Información
-          </button>
-
-        </li>
-        {{--<li class="nav-item" role="presentation">
-
-          <button class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
-            
-          </button>
-
-        </li>--}}
-      </ul>
-      <div class="tab-content-xl" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-     
-          <div class="container" id='calendar'></div>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#evento">
+          Launch
+        </button>-->
         
-        </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                   
-
-        </div>
-        {{--<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">3</div>--}}
-      </div>
-  <!-- Calendario fin-->
-
-    <!-- Modal -->
-      <div class="modal fade" id="evento" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-        <div class="modal-dialog modal-md" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"> Evento</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-              
-              <form id="FormularioEventos" enctype="multipart/form-data"> 
-                @csrf
-                <p>
-                <label for="titulo" class="form-label">id</label>
-                <input type="text" class="@error('id') is-invalid @enderror" id="id" name="id">
-                @error('titulo')
-                    <div class="invalid-feedback"> {{ $message }} </div>
-                @enderror
-                </p>
-                <label for="titulo" class="form-label"> * Título del Evento</label>
-                <input type="text" class="form-control @error('titulo') is-invalid @enderror" id="titulo" name="titulo" placeholder="Escriba el nombre del evento.">
-                @error('titulo')
-                    <div class="invalid-feedback"> {{ $message }} </div>
-                @enderror
-
-
-                <label for="inicio" class="form-label"> * Descripción del Evento</label>
-                <textarea class="form-control @error('descripcion') is-invalid @enderror" id="descripcion" name="descripcion" rows="5"></textarea>
-                @error('descripcion')
-                    <div class="invalid-feedback"> {{ $message }} </div>
-                @enderror
-
-                <label for="inicio" class="form-label"> * Inicio</label>
-                <div class="col">
-                    <input type="datetime-local" class="form-control @error('inicio') is-invalid @enderror" id="inicio" name="inicio">
-                    @error('inicio')
-                        <div class="invalid-feedback"> {{ $message }} </div>
-                    @enderror
-                </div>
-              
-                                                  
-                <label for="fin" class="form-label"> * Fin</label>
-                <div class="col">
-                    <input type="datetime-local" class="form-control @error('fin') is-invalid @enderror" id="fin" name="fin" >
-                    @error('fin')
-                        <div class="invalid-feedback"> {{ $message }} </div>
-                    @enderror
-                </div>
-
-              </form>
-
-            </div>
-            <div class="modal-footer">
-
-              <button type="button" id="guardar" class="btn btn-success">Guardar</button>
-
-              <button type="button" id="modificar" class="btn btn-warning">Modificar</button>
-
-              <button type="button" id="eliminar" class="btn btn-danger">Eliminar</button>
-
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    <!-- Modal fin-->
-
-
-    </section>
+        
+        
+        
     <!-- DATES -->
 
     <!-- PRICING -->
-    <section id="pricing" class="bg-light">
+    <section id="pricing" class="bg-dark">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">PRICING</h6>
-                    <h1>Our Fair & Simple Pricing</h1>
+                    <h6 class="text-warning">PRECIOS</h6>
+                    <h1 class="text-warning">Our Fair & Simple Pricing</h1>
                     <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
                         in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
                 </div>
@@ -661,14 +547,15 @@
                 </div>
             </div>
         </div>
-    </section><!-- PRICING -->
+    </section>
+    <!-- PRICING -->
 
     <!-- ======= Contact Us Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
 
         <div class="section-title">
-          <h2>Contact Us</h2>
+          <h2>Contacto</h2>
         </div>
 
         <div class="row">
@@ -676,67 +563,85 @@
           <div class="col-lg-6 d-flex align-items-stretch" data-aos="fade-up">
             <div class="info-box">
               <i class="bx bx-map"></i>
-              <h3>Our Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="info-box">
-              <i class="bx bx-envelope"></i>
-              <h3>Email Us</h3>
-              <p>info@example.com<br>contact@example.com</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="info-box ">
-              <i class="bx bx-phone-call"></i>
-              <h3>Call Us</h3>
-              <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
-            </div>
-          </div>
-
-          <!-- Ubicación-->
-          <div class="col-lg-6 col-md-6">
-              <div class="contaiiner">
+              <h3>Dirección</h3>
+              <p>ARENALES 42</p>
+              <div class="container">
                 <!--<input type="text" id="input" placeholder="Ingrese una ubicacion">-->
                   <!--<div id="map"></div>-->
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.69733060339!2d-65.40435362566028!3d-24.771564607163956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bc3ea2a0d5fd1%3A0xb00835aa919cda3b!2sArenales%2042%2C%20A4400%20Salta!5e0!3m2!1ses!2sar!4v1774837109129!5m2!1ses!2sar" width="85%" height="400px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
+            </div>
           </div>
-          <!-- Ubicación-->
 
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          
+          {{--Formulario de Whatsapp --}}
+          <div class="col-lg-18" data-aos="fade-up" data-aos-delay="100">
+                <div class="info-box">
+                  <i class="bx bxl-whatsapp"></i>
+                    <h3>Contactanos por WhatsApp y dejanos un mensaje</h3>
+                    <p>también<br> puede llamarnos o visitar el salón en horarios habiles</p>
+          </div>
+
+            <div class="col-lg-15" data-aos="fade-up" data-aos-delay="300">
+            <form method="post" role="form" class="eliminar">
               <div class="form-row">
                 <div class="col-lg-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validate"></div>
+
+                  <input type="text" name="name" class="form-control" id="nombre" placeholder="Escriba su Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+
+                  
                 </div>
-                <div class="col-lg-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validate"></div>
-                </div>
+                    <div class="col-lg-6 form-group">
+                      
+                     
+                    </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validate"></div>
+
+                <select id="asunto" name="seccion" class="form-control" >
+                    <option value="" selected disabled>-- Seleccione un asunto --</option>
+                    <option value="Fecha">Fecha</option> 
+                    <option value="Presupuesto">Presupuesto</option>
+                    <option value="Otro"> Otro tipo de consulta</option>
+                </select>
+                
+                
               </div>
+
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validate"></div>
+
+                <input type="date" class="form-control" id="fecha" name="inicio">
+                
+                
+              </div>
+
+              <div class="form-group">
+                <textarea class="form-control" id="mensaje" rows="5" data-rule="required" data-msg="S" placeholder="Escriba aquí su mensaje y detalle el evento para el cuál utilizaria el Salon"></textarea>
+                
               </div>
               <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                
+                
+                <button class="text-center danger btn btn-success" id="btnWhatsapp" type="button">
+                    Enviar a WhatsApp
+                </button>
+
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+
+
+              
+
+
             </form>
           </div>
 
+          </div>
+          {{--Formulario de Whatsapp FIN --}}
+
+          
+
         </div>
+        
 
       </div>
     </section><!-- End Contact Us Section -->
@@ -769,11 +674,13 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li class="active"><a href="#hero">Inicio</a></li>
+              <li><a href="#about">Sobre nosotros</a></li>
+              <li><a href="#services">Servicios</a></li>
+              <li><a href="#portfolio">Portafolio</a></li>
+              <li><a href="#pricing">Precios</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+              <li><a href="#contact">Contacto</a></li>
             </ul>
           </div>
 
@@ -818,12 +725,6 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 
-</body>
-
-  
-@stop
-
-@section('js')
   <!-- Vendor JS Files -->
   <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -835,16 +736,22 @@
   <script src="{{asset('js/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
   <script src="{{asset('js/vendor/aos/aos.js')}}"></script>
   
-  <!--Full calendar -->
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
-  <script src="{{ asset('js/calendario.js') }}"></script>
+  <script src="{{ asset('js/mamba.js') }}"></script>
+  <script src="{{ asset('js/formulario.js') }}"></script>
+  {{-- SweetAlert --}}
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
-  <script type="text/javascript">
-    var BaseURL = {!! json_encode(url('/')) !!};
-    console.log(BaseURL);
-  </script>
+
+    
+  
+</body>
+
+  
+{{--@stop
+
+@section('js')
+@stop--}}
 
   {{--@vite(['resources/js/app.js', 'resources/css/app.css'])--}}
 
-@stop
+

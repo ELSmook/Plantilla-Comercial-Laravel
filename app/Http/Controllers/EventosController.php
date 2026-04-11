@@ -15,7 +15,7 @@ class EventosController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function Showindex()
     {
         //
         
@@ -27,7 +27,7 @@ class EventosController extends Controller
 
     // Retornamos una vista y enviamos la variable "productos"
     //return view('panel.vendedor.lista_productos.index', compact('productos'));
-
+      return view('panel.organizador.lista_eventos.calendario');
     }
 
     /**

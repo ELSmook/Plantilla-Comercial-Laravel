@@ -15,15 +15,16 @@ class Rolseeder extends Seeder
      */
     public function run(): void
     {
-$rol_admin = Role::create(['name' => 'admin']);
-$rol_vendedor = Role::create(['name' => 'vendedor']);
- $rol_cliente = Role::create(['name' => 'cliente']);
+        $rol_admin = Role::create(['name' => 'admin']);
+        $rol_vendedor = Role::create(['name' => 'vendedor']);
+        $rol_cliente = Role::create(['name' => 'cliente']);
+        $rol_organizador = Role::create(['name' => 'organizador']);
 
 
- Permission::create(['name' => 'lista_usuarios'])->assignRole($rol_admin);
- Permission::create(['name' => 'lista_reservas'])->assignRole($rol_admin);
- Permission::create(['name' => 'lista_productos'])->assignRole($rol_vendedor);
- Permission::create(['name' => 'lista_compras'])->assignRole($rol_cliente);
+        Permission::create(['name' => 'lista_usuarios'])->assignRole($rol_admin);
+        Permission::create(['name' => 'lista_reservas'])->assignRole($rol_admin,$rol_organizador);
+        Permission::create(['name' => 'lista_productos'])->assignRole($rol_vendedor);
+        Permission::create(['name' => 'lista_compras'])->assignRole($rol_cliente);
  
         //
     }

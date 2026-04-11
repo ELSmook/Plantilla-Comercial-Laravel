@@ -78,6 +78,19 @@ class FotosController extends Controller
         ->with('alert', 'Foto eliminada exitosamente.');
     }
 
+    public function WelcomeIndex(){
+
+        $fotosCabecera = Fotos::where('seccion',"=","Cabecera")->inRandomOrder()->take(3)->get();
+        $fotosQuince = Fotos::where('seccion',"=","Quince")->inRandomOrder()->take(3)->get();
+        $fotosCasamiento = Fotos::where('seccion',"=","Casamiento")->inRandomOrder()->take(3)->get();
+        $fotosFiestas = Fotos::where('seccion',"=","Otro tipo de evento")->inRandomOrder()->take(3)->get();
+    
+
+        return view('welcome', compact('fotosCabecera','fotosQuince','fotosCasamiento','fotosFiestas'));
+
+
+    }
+
 }
 
 ?>

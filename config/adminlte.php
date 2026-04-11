@@ -211,7 +211,7 @@ return [
     */
 
     'sidebar_mini' => 'lg',
-    'sidebar_collapse' => true, //era false para ocultar la barra
+    'sidebar_collapse' => false, //era false para ocultar la barra
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
@@ -392,6 +392,7 @@ return [
             'icon' => 'fas fa-home', 
             
             ],
+            /*
             [
             'text' => 'Panel',
             //'url'  => '#',
@@ -399,13 +400,20 @@ return [
             'icon' => 'fas fa-home', 
             
             ],
-
+            */
             [
             'text' => 'Fotos',
             //'url' => '#',
             'route' => 'fotos.index',
             'icon' => 'fas fa-images', // icono de fontawesome
-            //'can' => 'lista_productos' // permiso del vendedor
+            'can' => 'lista_reservas' // permiso del vendedor
+            ],
+            [
+            'text' => 'Calendario',
+            //'url' => '#', 'index'])->name('home');
+            'route' => 'evento.index',
+            'icon' => 'fas fa-calendar-times', // icono de fontawesome
+            'can' => 'lista_reservas' // permiso del vendedor
             ],
 
         [

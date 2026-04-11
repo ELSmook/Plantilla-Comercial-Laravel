@@ -73,7 +73,15 @@
     <div class="container-lg">
       
       <div class="logo float-left">
-        <h1 class="text-light"><a href="index.html"><span>Salon Arenales</span></a></h1>
+        <h1 class="text-light">
+          @auth
+            {{--opciones de usuario logueado--}}
+              <a class="btn" href="{{ url('panel')}}"><span>Salon Arenales</span></a>
+          @else
+            {{-- usuario no logueado--}}
+            <a class="btn" href="{{ url('login')}}"><span>Salon Arenales</span></a>
+          @endauth
+        </h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -88,7 +96,8 @@
           <li><a href="#faq">Preguntas frecuentes</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
-      </nav><!-- .nav-menu -->
+      </nav>
+      <!-- .nav-menu -->
 
     </div>
 

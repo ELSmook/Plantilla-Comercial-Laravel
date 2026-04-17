@@ -3,7 +3,7 @@
    <div wire:poll.20s>
     @foreach($fotos as $foto)
         <div class="carousel-item @if($loop->first) active @endif">
-            <img src="{{ Storage::url($foto->imagen) }}" class="img-xl" alt="Foto ampliada">
+            <img src="{{ Storage::url($foto->imagen) }}" class="img-bg" alt="Foto ampliada">
         </div>
     @endforeach
 </div>

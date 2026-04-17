@@ -847,6 +847,12 @@ section {
 /*--------------------------------------------------------------
 # Our Portfolio
 --------------------------------------------------------------*/
+.vbox{
+  max-width: 10px;   /* ocupa máximo 80% del ancho de la pantalla */
+  height: 10px;
+}
+
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }

@@ -36,7 +36,13 @@ class FotosController extends Controller
         
 
         $request->validate([
-        'imagen.*' => 'required|image|mimes:png,jpg,jpeg,webp'
+        'imagen.*' => 'required|image|mimes:png,jpg,jpeg,webp,heic,heif|max:5120'
+        ],  
+        [
+            'imagen.*.required' => 'Debes seleccionar al menos una foto.',
+            'imagen.*.image' => 'El archivo debe ser una imagen.',
+            'imagen.*.mimes' => 'Formato no permitido. Usa JPG, PNG, WEBP o HEIC.',
+            'imagen.*.max' => 'La foto no puede superar los 5 MB.'
         ]);
 
         if ($request->hasFile('imagen')) {
@@ -88,6 +94,40 @@ class FotosController extends Controller
 
         return view('welcome', compact('fotosCabecera','fotosQuince','fotosCasamiento','fotosFiestas'));
 
+
+    }
+
+    public function QrIndex(){
+
+        $fotosQr = Fotos::where('seccion',"=","qr")->inRandomOrder()->get();
+
+        return view('fotosqr', compact('fotosQr'));
+    }
+
+    public function QrSubirFotos(Request $request){
+        
+        $request->validate([
+        'imagen.*' => 'required|image|mimes:png,jpg,jpeg,webp'
+        ]);
+
+        if ($request->hasFile('imagen')) {
+            foreach($request->file('imagen') as $image_url){
+            $foto = new Fotos();
+            $foto->seccion = "qr";
+
+            $almacenar = $image_url->store('public/fotos'); //por Ejemplo: "public/fotos/abcd123.jpg" 
+            $foto->imagen = $almacenar; // el path relativo 
+            $foto->save();
+
+        }
+        } else {
+        //$foto->imagen = '';
+        echo("Hola no funciono");
+        }
+        //$foto->save();
+        return redirect()
+        ->route('fotos.qr')
+        ->with('alert', 'Se agregaron exitosamente las fotos.');
 
     }
 

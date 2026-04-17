@@ -415,6 +415,13 @@ return [
             'icon' => 'fas fa-calendar-times', // icono de fontawesome
             'can' => 'lista_reservas' // permiso del vendedor
             ],
+            [
+            'text' => 'QR',
+            //'url' => '#', 'index'])->name('home');
+            'route' => 'fotosqr',
+            'icon' => 'fas fa-qrcode', // icono de fontawesome
+            
+            ],
 
         [
             'text' => 'Lista de usuarios',

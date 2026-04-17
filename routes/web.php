@@ -35,3 +35,6 @@ Route::post('/actualizar/{evento}', [App\Http\Controllers\EventosController::cla
 
 Route::get('/', [App\Http\Controllers\FotosController::class, 'WelcomeIndex'])->name('welcome');
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/Qr', [App\Http\Controllers\FotosController::class, 'QrIndex'])->name('fotosqr');
+
+Route::post('/Qr', [FotosController::class , 'QrSubirFotos'])->name('fotos.qr');

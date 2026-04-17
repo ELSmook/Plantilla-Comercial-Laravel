@@ -1,0 +1,13 @@
+input{
+    display: none;
+}
+label{
+    height: 100px;
+    width: 150px;
+    border-radius: 6px;
+    border: 1px dashed #999;
+}
+label:hover{
+    color: blueviolet;
+    border: 1px red violet;
+}

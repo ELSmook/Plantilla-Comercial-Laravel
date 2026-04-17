@@ -235,7 +235,7 @@
                 <h4>App 1</h4>
                 <p>App</p> 
                 <div class="portfolio-links">
-                  <a href="@isset($fotosQuince[0]->imagen){{ Storage::url($fotosQuince[0]->imagen) }}@endisset" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="icofont-eye"></i></a>
+                  <a href="@isset($fotosQuince[0]->imagen){{ Storage::url($fotosQuince[0]->imagen) }}@endisset" data-gall="portfolioGallery" class="venobox" title="App 1"  data-vbwidth="100px" data-vbheight="100px"><i class="icofont-eye"></i></a>
                   <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
                 </div>
               </div>

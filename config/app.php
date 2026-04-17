@@ -187,6 +187,7 @@ return [
         // 'Example' => App\Facades\Example::class,
         /*'PDF' => Barryvdh\DomPDF\Facade\PDF::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,*/
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
 
     ])->toArray(),
 

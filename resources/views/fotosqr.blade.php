@@ -129,7 +129,7 @@
                     <div class="text-center">
                         {{--<img src="{{ Storage::url($fotosQr->first()->imagen) }}" alt="Foto inicial" width="300"data-toggle="modal" data-target="#modalGaleria">--}}
 
-                       <div id="carouselModal" class="carousel slide" data-ride="carousel" data-interval="3000">
+                       <div id="carouselModal" class="carousel slide" data-ride="carousel" data-interval="5000">
                         <div class="carousel-inner">
                            @livewire('dynamic-photos')
                         </div>
@@ -159,51 +159,42 @@
 
 
         
-        <script src="{{asset('js/vendor/venobox/venobox.min.js')}}"></script>
+        {{--<script src="{{asset('js/vendor/venobox/venobox.min.js')}}"></script>--}}
             
         <script>
             
 
-            document.addEventListener("DOMContentLoaded", function(event) {
-                const image = document.getElementById('imagen');
-            
-                image.addEventListener('change', (e) => {
+        document.addEventListener("DOMContentLoaded", function(event) {
+            const image = document.getElementById('imagen');
+        
+            image.addEventListener('change', (e) => {
 
-                    const input = e.target;
-                    const imagePreview = document.querySelector('#image_preview');
-                    
-                    if(!input.files.length) return
+                const input = e.target;
+                const imagePreview = document.querySelector('#image_preview');
+                
+                if(!input.files.length) return
 
-                    file = input.files[0];
-                    objectURL = URL.createObjectURL(file);
-                    imagePreview.src = objectURL;
-                });
+                file = input.files[0];
+                objectURL = URL.createObjectURL(file);
+                imagePreview.src = objectURL;
             });
+        });
+
+        /*let intervalo = 4000;
+        let totalSlides = document.querySelectorAll('#carouselModal .carousel-item').length;
+
+        console.log("Tiempo de cada imagen: " ,intervalo * totalSlides)
+
+        setInterval(() => {
+            //Livewire.emit('refreshFotos');
+            Livewire.dispatch('refreshFotos');
+            console.log("Refrescar " , intervalo * totalSlides);
+        }, intervalo * totalSlides);*/
+        
+
+
         </script>
         
-        <script>
-            $(function(){
-  $('#modalFoto').on('show.bs.modal', function (event) {
-    var img = $(event.relatedTarget);
-    var src = img.data('src');
-    $('#modalImage').attr('src', src);
-  });
-});
-
-// Inicializar carrusel al abrir modal
-$('#modalGaleria').on('shown.bs.modal', function () {
-  $('#carouselModal').carousel({
-    // hay que sincronizar este temporizador con el de livewire para que no pasen cosas raras
-    interval: 3000,
-    ride: 'carousel'
-  });
-});
-
-// Pausar carrusel al cerrar modal
-$('#modalGaleria').on('hidden.bs.modal', function () {
-  $('#carouselModal').carousel('pause');
-});
-        </script>
         
 
     </body>

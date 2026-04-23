@@ -105,6 +105,10 @@ class FotosController extends Controller
     }
 
     public function QrSubirFotos(Request $request){
+
+        try {
+            
+        DB::beginTransaction();
         
         $request->validate([
         'imagen.*' => 'required|image|mimes:png,jpg,jpeg,webp'
@@ -116,10 +120,12 @@ class FotosController extends Controller
             $foto->seccion = "qr";
 
             $almacenar = $image_url->store('public/fotos'); //por Ejemplo: "public/fotos/abcd123.jpg" 
-            $foto->imagen = $almacenar; // el path relativo 
+            $foto->imagen = $almacenar; // el path relativo
             $foto->save();
-
+            
+            
         }
+            DB::commit();
         } else {
         //$foto->imagen = '';
         echo("Hola no funciono");
@@ -129,6 +135,12 @@ class FotosController extends Controller
         ->route('fotos.qr')
         ->with('alert', 'Se agregaron exitosamente las fotos.');
 
+        } catch (\Exception $e) {
+  
+            DB::rollback();
+            //vista de errores
+           return $e->getMessage();
+        }
     }
 
 }

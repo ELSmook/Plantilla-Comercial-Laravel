@@ -19,6 +19,10 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   <!-- Vendor CSS Files -->
   <link href="{{asset('js/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{asset('js/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
@@ -53,13 +57,13 @@
               <a class="btn" href="{{ url('panel')}}">Panel</a>
             @else
             {{-- usuario no logueado--}}
-            <a class="btn" href="{{ url('login')}}">Iniciar Sesión</a>
+            <a class="btn" href="{{ url('login')}}"></a>
             @endauth
         </a>
       </div>
       <div class="social-links float-right">
-        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="https://www.facebook.com/people/Salon-arenales/100063671315114/" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="https://www.instagram.com/salon_arenales_salta/" class="instagram"><i class="icofont-instagram"></i></a>
         {{--<a href="#" class="twitter"><i class="icofont-twitter"></i></a>
         <a href="#" class="skype"><i class="icofont-skype"></i></a>
         <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>--}}
@@ -92,7 +96,7 @@
           <li><a href="#about">Sobre nosotros</a></li>
           <li><a href="#services">Servicios</a></li>
           <li><a href="#portfolio">Portafolio</a></li>
-          <li><a href="#pricing">Precios</a></li>
+          {{--<li><a href="#pricing">Precios</a></li>--}}
           <li><a href="#faq">Preguntas frecuentes</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
@@ -118,12 +122,12 @@
 
           <!-- Slide 1  fotosCabecera','fotosQuince','fotosCasamiento','fotosFiestas' url('assets/img/slide/slide-1.jpg') --> 
           
-          <div class="carousel-item active" style="background-image: url('@foreach ($fotosCabecera as $foto) @isset($foto->imagen) {{ Storage::url($foto->imagen) }} @endisset @break @endforeach');">
+          <div class="carousel-item active" style="background-image: url('@foreach ($fotosCabecera as $foto) @isset($foto->imagen) {{ Storage::url($foto->imagen) }} @endisset @break @endforeach'); height: 85vh; background-position: center; background-size: cover;">
             <div class="carousel-container">
               <div class="carousel-content container">
-                <h2 class="animated fadeInDown">Welcome to <span>Mamba</span></h2>
-                <p class="animated fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <a href="#about" class="btn-get-started animated fadeInUp scrollto">Read More</a>
+                <h2 class="animated fadeInDown"> Bienvenidos al <span>SALON ARENALES</span></h2>
+                <p class="animated fadeInUp"> Ubicado en Arenales 42, en la ciudad de Salta, contamos con un espacio ideal para la realización de eventos sociales íntimos y medianos, diseñado para recibir hasta 100 invitados.</p>
+                <a href="#about" class="btn-get-started animated fadeInUp scrollto">Saber más</a>
               </div>
             </div>
           </div>
@@ -132,9 +136,9 @@
           <div class="carousel-item" style="background-image: url('@isset($fotosCabecera[1]){{ Storage::url($fotosCabecera[1]->imagen) }}@endisset');"> 
             <div class="carousel-container">
               <div class="carousel-content container">
-                <h2 class="animated fadeInDown">Lorem Ipsum Dolor</h2>
-                <p class="animated fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <a href="#about" class="btn-get-started animated fadeInUp scrollto">Read More</a>
+                <h2 class="animated fadeInDown"> Momentos únicos</h2>
+                <p class="animated fadeInUp"> Que perduran en la memoria con Amor y cariño</p>
+                <a href="#about" class="btn-get-started animated fadeInUp scrollto">Saber más</a>
               </div>
             </div>
           </div>
@@ -143,9 +147,9 @@
           <div class="carousel-item" style="background-image: url('@isset($fotosCabecera[2]->imagen){{ Storage::url($fotosCabecera[2]->imagen) }} @endisset');">
             <div class="carousel-container">
               <div class="carousel-content container">
-                <h2 class="animated fadeInDown">Sequi ea ut et est quaerat</h2>
-                <p class="animated fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <a href="#about" class="btn-get-started animated fadeInUp scrollto">Read More</a>
+                <h2 class="animated fadeInDown">El lugar ideal para tu evento</h2>
+                <p class="animated fadeInUp"> Ofrecemos el ambiente ideal para bodas, fiestas de quince y celebraciones familiares.</p>
+                <a href="#about" class="btn-get-started animated fadeInUp scrollto">Saber más</a>
               </div>
             </div>
           </div>
@@ -172,31 +176,62 @@
       <div class="container">
 
         <div class="row no-gutters">
+          {{-- Video 1--}}
           <div class="col-lg-6 video-box">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-            <a href="https://www.youtube.com/watch?v=EcbgbKtOELY" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            <img src="@foreach ($fotosCabecera as $foto) @isset($foto->imagen) {{ Storage::url($foto->imagen) }} @endisset @break @endforeach" class="img-fluid" alt="Salon de Fiestas con decoración de mesas y sillas con fundas elegantes">
+            <a href="https://youtube.com/kQ5ClDKSxBk" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true" data-gall="videos"></a>
           </div>
+          
+          {{-- Video 2
+          <div class="col-lg-6 video-box" hidden>
+            <img src="@foreach ($fotosCabecera as $foto) @isset($foto->imagen) {{ Storage::url($foto->imagen) }} @endisset @break @endforeach" class="img-fluid" alt="Pista de baile armada para el vals de bodas en Salón de fiestas Arenales">
+            <a href="https://youtube.com/bNuc8Anui8E?feature=share" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true" data-gall="videos"></a>
+          </div>--}}
+          {{-- Video 3
+          <div class="col-lg-6 video-box" hidden>
+            <img src="@foreach ($fotosCabecera as $foto) @isset($foto->imagen) {{ Storage::url($foto->imagen) }} @endisset @break @endforeach" class="img-fluid" alt="Pista de baile armada para el vals de bodas en Salón de fiestas Arenales">
+            <a href="https://www.youtube.com/dU73Y9oaCqo" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true" data-gall="videos"></a>
+          </div>--}}
+          
 
           <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
             <div class="section-title">
-              <h2>Sobre Nosotros</h2>
-              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+              
+              <h2 class="var">
+                Sobre Nosotros
+              </h2>
+              <p>
+                Con más de 20 años de experiencia en el rubro sabemos que organizar un evento es mucho más que elegir un lugar: es dar forma a recuerdos que durarán toda la vida. 
+                Por eso, nos comprometemos a acompañarte en cada paso, con atención cercana y asesoramiento personalizado brindando confianza y tranquilidad para que todo se lleve a cabo correctamente
+
+              </p>
             </div>
 
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="20">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
+            
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="20">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+              <div class="icon"><i class='bx bx-book-open'></i></div>
+              <h4 class="title"><a href=""> Consultas</a></h4>
+              <p class="description">
+                Las consultas se hacen con cita previa.
+              </p>
             </div>
+
+            
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="20">
+              <div class="icon"><i class="bx bx-time"></i></div>
+              <h4 class="title"><a href="">Horarios de atención y de Evento</a></h4>
+              <p class="description">
+                 Estamos abiertos de Lunes a Viernes de 10:00AM Hrs hasta 19:30PM hrs.
+                Los eventos son de 21:30PM Hrs hasta 04:00AM Hrs.
+              </p>
+            </div>
+
 
           </div>
+          
         </div>
 
       </div>
@@ -209,8 +244,10 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="section-title">
-          <h2>Portafolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          
+          <h2 class="var1">Portafolio</h2>
+          
+          <p>A lo largo de los años, Salón Arenales ha sido escenario de innumerables historias: bodas llenas de emoción, fiestas de quince inolvidables y reuniones familiares que fortalecen lazos. Nuestro portafolio refleja la versatilidad del salón y la creatividad de cada anfitrión, con decoraciones personalizadas, iluminación adaptada a distintos estilos y celebraciones que destacan por su calidez. Descubre cómo otros anfitriones confiaron en nosotros y deja que sus experiencias te inspiren a crear la tuya.</p>
         </div>
 
         <div class="row">
@@ -230,10 +267,10 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="@isset($fotosQuince[0]->imagen){{ Storage::url($fotosQuince[0]->imagen) }}@endisset" class="img-fluid" alt="">
+              <img src="@isset($fotosQuince[0]->imagen){{ Storage::url($fotosQuince[0]->imagen) }}@endisset" class="img-fluid" alt="Mesa Candy Bar para fiesta de quince">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p> 
+                <h4>Quince Años</h4>
+                <p>XV</p> 
                 <div class="portfolio-links">
                   <a href="@isset($fotosQuince[0]->imagen){{ Storage::url($fotosQuince[0]->imagen) }}@endisset" data-gall="portfolioGallery" class="venobox" title="App 1"  data-vbwidth="100px" data-vbheight="100px"><i class="icofont-eye"></i></a>
                   <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
@@ -244,10 +281,10 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="@isset($fotosFiestas[0]->imagen) {{ Storage::url($fotosFiestas[0]->imagen) }} @endisset" class="img-fluid" alt="">
+              <img src="@isset($fotosFiestas[0]->imagen) {{ Storage::url($fotosFiestas[0]->imagen) }} @endisset" class="img-fluid" alt="Decoración de mesas con centro y Salón con amplia capacidad de personas con rampa de discapacitados">
               <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
+                <h4>Fiestas</h4>
+                <p>Distintas fiestas</p>
                 <div class="portfolio-links">
                   <a href="@isset($fotosFiestas[0]->imagen) {{ Storage::url($fotosFiestas[0]->imagen) }} @endisset" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="icofont-eye"></i></a>
                   <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
@@ -258,10 +295,10 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="@isset($fotosQuince[1]->imagen){{ Storage::url($fotosQuince[1]->imagen) }}@endisset" class="img-fluid" alt="">
+              <img src="@isset($fotosQuince[1]->imagen){{ Storage::url($fotosQuince[1]->imagen) }}@endisset" class="img-fluid" alt="Quinceañera en escenario con paneles Shimmer y luces LED">
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
+                <h4>Quince Años</h4>
+                <p>XV</p>
                 <div class="portfolio-links">
                   <a href="@isset($fotosQuince[1]->imagen){{ Storage::url($fotosQuince[1]->imagen) }}@endisset" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="icofont-eye"></i></a>
                   <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
@@ -272,10 +309,10 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="@isset($fotosCasamiento[1]->imagen){{ Storage::url($fotosCasamiento[1]->imagen) }} @endisset" class="img-fluid" alt="">
+              <img src="@isset($fotosCasamiento[1]->imagen){{ Storage::url($fotosCasamiento[1]->imagen) }} @endisset" class="img-fluid" alt="Espacio para recepcción de invitados y mesas de catering">
               <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
+                <h4>Casamiento</h4>
+                <p>Boda</p>
                 <div class="portfolio-links">
                   <a href="@isset($fotosCasamiento[1]->imagen){{ Storage::url($fotosCasamiento[1]->imagen) }} @endisset" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="icofont-eye"></i></a>
                   <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
@@ -288,8 +325,8 @@
             <div class="portfolio-wrap">
               <img src="@isset($fotosFiestas[2]->imagen){{ Storage::url($fotosFiestas[2]->imagen) }}@endisset" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
+                <h4>Evento</h4>
+                <p>Fiesta</p>
                 <div class="portfolio-links">
                   <a href="@isset($fotosFiestas[2]->imagen){{ Storage::url($fotosFiestas[2]->imagen) }}@endisset" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="icofont-eye"></i></a>
                   <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
@@ -302,8 +339,8 @@
             <div class="portfolio-wrap">
               <img src="@isset($fotosQuince[2]->imagen){{ Storage::url($fotosQuince[2]->imagen) }}@endisset" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
+                <h4>Quince Años</h4>
+                <p>XV</p>
                 <div class="portfolio-links">
                   <a href="@isset($fotosQuince[2]->imagen){{ Storage::url($fotosQuince[2]->imagen) }}@endisset" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="icofont-eye"></i></a>
                   <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
@@ -316,8 +353,8 @@
             <div class="portfolio-wrap">
               <img src="@isset($fotosCasamiento[0]->imagen) {{ Storage::url($fotosCasamiento[0]->imagen) }} @endisset" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
+                <h4>Casamiento</h4>
+                <p>Boda</p>
                 <div class="portfolio-links">
                   <a href="@isset($fotosCasamiento[0]->imagen) {{ Storage::url($fotosCasamiento[0]->imagen) }} @endisset" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="icofont-eye"></i></a>
                   <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
@@ -330,8 +367,8 @@
             <div class="portfolio-wrap">
               <img src="@isset($fotosCasamiento[2]->imagen){{ Storage::url($fotosCasamiento[2]->imagen) }}@endisset" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
+                <h4>Casamiento</h4>
+                <p>Boda</p>
                 <div class="portfolio-links">
                   <a href="@isset($fotosCasamiento[2]->imagen){{ Storage::url($fotosCasamiento[2]->imagen) }}@endisset" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="icofont-eye"></i></a>
                   <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
@@ -344,8 +381,8 @@
             <div class="portfolio-wrap">
               <img src="@isset($fotosFiestas[1]->imagen) {{ Storage::url($fotosFiestas[1]->imagen) }}@endisset" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Web 34</h4>
-                <p>Web</p>
+                <h4>Evento</h4>
+                <p>Fiestas</p>
                 <div class="portfolio-links">
                   <a href="@isset($fotosFiestas[1]->imagen) {{ Storage::url($fotosFiestas[1]->imagen) }}@endisset" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="icofont-eye"></i></a>
                   <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
@@ -364,40 +401,56 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Services</h2>
+          <h2 class="var1">Servicios</h2>
         </div>
 
         <div class="row">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="icofont-computer"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            <div class="icon"><i class="bx bx-headphone"></i></div>
+            <h4 class="title"><a href=""> DJ</a></h4>
+            <p class="description"> Se realiza una programación previa con el dj para seleccionar el tipo de musica que desea para el evento</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            <div class="icon"><i class="bx bx-microphone"></i></div>
+            <h4 class="title"><a href="">Locutor</a></h4>
+            <p class="description"> Fundamental para coordinar el evento desde el inicio hasta el final .</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="icofont-earth"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            <div class="icon"><i class="icofont-business-man"></i></div>
+            <h4 class="title"><a href="">Portero</a></h4>
+            <p class="description"> Se encarga del control de invitados a través de una Lista.</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="icofont-image"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <div class="icon"><i class="bx bx-gift"></i></div>
+            <h4 class="title"><a href="">Decoración</a></h4>
+            <p class="description"> Incluye decorado de luces y telas, con sectores en la entrada y en el escenario, como asi también la mesa principal teniendo en cuenta colores elejidos.</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="icofont-settings"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            <div class="icon"><i class="icofont-building"></i></div>
+            <h4 class="title"><a href="">Patio para fumadores</a></h4>
+            <p class="description"> Esta al final del Salón</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="icofont-tasks-alt"></i></div>
-            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+            <div class="icon"><i class="icofont-dining-table"></i></div>
+            <h4 class="title"><a href="">Mesas y Sillas</a></h4>
+            <p class="description"> Cuenta con 22 mesas redondas con una capacidad para  8 comensales y sillas.</p>
           </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="bx bx-plus-medical"></i></div>
+            <h4 class="title"><a href="">Servicio de MEDISEM</a></h4>
+            <p class="description"> Para brindar mayor tranquilidad y protección este servicio funciona durante el evento y cubre las emergencias medicas que pudieran surgir.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="bx bx-trash"></i></div>
+            <h4 class="title"><a href="">Limpieza General</a></h4> 
+            <p class="description"> Este servicio esta cubierto para garantizar la higiene durante y al finaizar el evento.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="icofont-cocktail"></i></div>
+            <h4 class="title"><a href="">Barra de tragos</a></h4>
+            <p class="description"> Este sector esta destinado para el funcionamiento de expendio de bebida.</p>
+          </div>
+
         </div>
 
       </div>
@@ -407,38 +460,39 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Preguntas Frecuentes</h2>
+          <h2 class="var1">Preguntas Frecuentes</h2>
         </div>
         <div class="row  d-flex align-items-stretch">
 
           <div class="col-lg-6 faq-item" >
-            <h4>Non consectetur a erat nam at lectus urna duis?</h4>
+            <h4>¿Los precios son fijos?</h4>
             <p>
-              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+            Si, del alquiler del Salón son precios que no tienen reajuste.
             </p>
           </div>
 
           <div class="col-lg-6 faq-item" >
-            <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
+            <h4>¿Realizan servicio de Catering?</h4>
             <p>
-              Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
+              {{--El Salón Arenales se adhiere al decreto N.º 750 donde se estipula que los salones que realizan eventos privados no deben cobrar impuestos (SADAIC y ADICAPIF).--}}
+               Si y el servicio cuenta principalmente con manteleria, vajilla, mozos, cocineros, Barman, entre otras cosas.
             </p>
           </div>
 
           <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="200">
-            <h4>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</h4>
+            <h4>¿Brindan asesoría si alquilamos el Salón solo?</h4>
             <p>
-              Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.
+              Si, le brindamos asesoría con lo que necesite hacer o saber sobre su evento para que encuentre lo que necesite.
             </p>
           </div>
 
           <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="300">
-            <h4>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h4>
+            <h4>¿Puedo suprimir algunos servicios del alquiler?</h4>
             <p>
-              Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
+              El alquiler del Salón Arenales le incluye varios servicios que ya se encuentran instalados.
             </p>
           </div>
-
+          {{--
           <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="400">
             <h4>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h4>
             <p>
@@ -452,7 +506,7 @@
               Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
             </p>
           </div>
-
+          --}}
         </div>
 
       </div>
@@ -467,7 +521,7 @@
     <!-- DATES -->
 
     <!-- PRICING -->
-    <section id="pricing" class="bg-dark">
+    {{--<section id="pricing" class="bg-dark">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-8 mx-auto text-center">
@@ -477,7 +531,7 @@
                         in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
                 </div>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 ">
                 <div class="col-lg-3 col-sm-6">
                     <div class="pricing card-effect text-center">
                         <h6>STARTER</h6>
@@ -516,55 +570,19 @@
                         <button class="btn btn-primary">Get Started</button>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="pricing card-effect text-center">
-                        <h6>STARTER</h6>
-                        <h1>$299</h1>
-                        <hr>
-                        <ul class="list-unstyled mb-4">
-                            <li><i class='bx bxs-check-circle'></i>
-                                Premium support</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                30+ Webmaster Tools</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                Drag & Drop Builder</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                eCommerce Store</li>
-                            <li><i class='bx bxs-check-circle'></i>Wordpress plugins</li>
-                        </ul>
-                        <button class="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="pricing card-effect text-center">
-                        <h6>STARTER</h6>
-                        <h1>$399</h1>
-                        <hr>
-                        <ul class="list-unstyled mb-4">
-                            <li><i class='bx bxs-check-circle'></i>
-                                Premium support</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                30+ Webmaster Tools</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                Drag & Drop Builder</li>
-                            <li><i class='bx bxs-check-circle'></i>
-                                eCommerce Store</li>
-                            <li><i class='bx bxs-check-circle'></i>Wordpress plugins</li>
-                        </ul>
-                        <button class="btn btn-primary">Get Started</button>
-                    </div>
+                
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- PRICING -->
 
     <!-- ======= Contact Us Section ======= -->
-    <section id="contact" class="contact">
+    <section  class="contact">
       <div class="container">
 
-        <div class="section-title">
-          <h2>Contacto</h2>
+        <div id="contact" class="section-title">
+          <h2 class="var1">Contacto</h2> 
         </div>
 
         <div class="row">
@@ -664,54 +682,54 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>Mamba</h3>
+            <h3>SALON ARENALES</h3>
             <p>
-              A108 Adam Street <br>
-              NY 535022, USA<br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              Arenales 42 <br>
+              Salta Capital, ARG<br><br>
+              {{--<strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>--}}
             </p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.facebook.com/people/Salon-arenales/100063671315114/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/salon_arenales_salta/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              {{--<a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>--}}
             </div>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Links</h4>
             <ul>
               <li class="active"><a href="#hero">Inicio</a></li>
               <li><a href="#about">Sobre nosotros</a></li>
               <li><a href="#services">Servicios</a></li>
               <li><a href="#portfolio">Portafolio</a></li>
-              <li><a href="#pricing">Precios</a></li>
+              {{--<li><a href="#pricing">Precios</a></li>--}}
               <li><a href="#faq">Preguntas frecuentes</a></li>
               <li><a href="#contact">Contacto</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
+            <h4>El mejor lugar para tu evento</h4>
+            {{--<ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
+            </ul>--}}
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
+          {{--<div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
 
-          </div>
+          </div>--}}
 
         </div>
       </div>
@@ -719,14 +737,14 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Mamba</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Salon Arenales</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by {{--<a href="https://bootstrapmade.com/">--}}Kevin Hoyos</a>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -750,7 +768,6 @@
   {{-- SweetAlert --}}
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
-
     
   
 </body>

@@ -76,6 +76,12 @@
                     <div class="container text-center">
                         <div>
                             {!! QrCode::size(300)->generate(url()->current()) !!}
+                            {{--{!!QrCode::size(300)->generate(
+                                    "Nombre: Rodolfo Ibarra ".
+                                    " DNI: 24875702 ".
+                                    " Numero de urgencias: 387 6302161 ".
+                                    " Domicilio: Radio Santiago del Estero 2850"
+                                    ) !!}--}}
                         </div>
                     </div>
                 </div>

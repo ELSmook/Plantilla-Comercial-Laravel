@@ -4,6 +4,44 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+.var::after {
+  content: '';
+  position: relative;
+  display: block;
+  width: 25vw;
+  height: 3px;
+  background: var(--Blush);
+  bottom: 0;
+  top: 11;
+  left: calc(20% - 25px);
+  
+}
+
+.var1::after {
+  content: '';
+  position: relative;
+  display: block;
+  width: 35vw;
+  height: 3px;
+  background: var(--Blush);
+  bottom: 0;
+  top: 11;
+  left: calc(30% - 25px);
+  
+}
+
+.vbox-container iframe {
+  width: 800px !important;   /* tamaño fijo o relativo */
+  height: 450px !important;
+  max-width: 90vw;           /* se adapta a pantallas pequeñas*/
+  max-height: 80vh;
+}
+
+.vbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /*--------------------------------------------------------------
 # Color variables var(--Blush)
@@ -22,10 +60,10 @@
 }
 
 /*--------------------------------------------------------------
-# General
+# General "Open Sans", sans-serif
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: var(--Blanco); /* Color de los parrafos*/
   background-color: var(--Golden3);
   
@@ -41,7 +79,8 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6, .font-primary {
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif; /*Raleway */
+  font-weight: 700;
 }
 
 /*--------------------------------------------------------------
@@ -194,7 +233,7 @@ header .container{
   padding: 12px 15px;
   transition: 0.3s;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
@@ -503,15 +542,15 @@ header .container{
   transition: 0.5s;
   line-height: 1;
   margin: 10px;
-  color: #fff;
+  color: black;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
   border: 0;
-  background: #428bca;
+  background: var(--Blush);
 }
 
 #hero .btn-get-started:hover {
-  background: #1c5c93;
+  background: var(--Golden1);
 }
 
 @media (max-width: 768px) {
@@ -579,7 +618,7 @@ section {
 .about .section-title p {
   text-align: left;
   font-style: italic;
-  color: #666;
+  color: white;
 }
 
 .about .about-content {
@@ -624,7 +663,7 @@ section {
 }
 
 .about .icon-box .title a {
-  color: #343a40;
+  color: var(--Golden4); /* #343a40 gris*/
   transition: 0.3s;
 }
 
@@ -823,6 +862,10 @@ section {
   padding-bottom: 30px;
 }
 
+.services .container{
+  background-color: var(--Negro);
+}
+
 .services .icon-box {
   margin-bottom: 20px;
   text-align: center;
@@ -837,10 +880,10 @@ section {
   width: 80px;
   height: 80px;
   margin-bottom: 20px;
-  background: #fff;
+  background: var(--Negro2);
   border-radius: 50%;
   transition: 0.5s;
-  color: #428bca;
+  color: var(--Golden2);
   font-size: 40px;
   overflow: hidden;
   padding-top: 20px;
@@ -848,7 +891,7 @@ section {
 }
 
 .services .icon-box:hover .icon i {
-  box-shadow: 0px 0 30px rgba(66, 139, 202, 0.5);
+  box-shadow: 0px 0 30px var(--Golden1);
 }
 
 .services .title {
@@ -865,16 +908,17 @@ section {
 }
 
 .services .title a:hover {
-  color: #428bca;
+  color: var(--Golden3);
 }
 
+/* barra */
 .services .title::after {
   content: '';
   position: absolute;
   display: block;
   width: 50px;
   height: 2px;
-  background: #428bca;
+  background: var(--Blush);
   bottom: 0;
   left: calc(50% - 25px);
 }
@@ -1099,7 +1143,7 @@ section {
   line-height: 28px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #1f3548;
+  color: var(--Golden4); /* preguntas frecuentes color*/
 }
 
 /*--------------------------------------------------------------
@@ -1134,6 +1178,16 @@ section {
     transform: translateY(10px);
 }
 
+@media (max-width: 480px) {
+  #pricing .container {
+    height: 200vh; /* celulares */
+  }
+}
+@media (max-width: 768px) {
+  #pricing .container {
+    height: 200vh; /* valor para pantallas pequeñas (celulares) */
+  }
+}
 
 /*--------------------------------------------------------------
 # Contact Us
@@ -1149,10 +1203,10 @@ section {
 
 .contact .info-box i {
   font-size: 32px;
-  color: #428bca;
+  color: var(--Golden2);
   border-radius: 50%;
   padding: 8px;
-  border: 2px dotted #9eccf4;
+  border: 2px dotted var(--Golden1);
 }
 
 .contact .info-box h3 {
